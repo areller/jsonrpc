@@ -1,4 +1,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/ybbus/jsonrpc/v3)](https://goreportcard.com/report/github.com/ybbus/jsonrpc/v3)
+[![Go build](https://github.com/ybbus/jsonrpc/actions/workflows/go.yml/badge.svg)](https://github.com/ybbus/jsonrpc)
+[![Codecov](https://codecov.io/github/ybbus/jsonrpc/branch/master/graph/badge.svg?token=ARYOQ8R1DT)](https://codecov.io/github/ybbus/jsonrpc)
 [![GoDoc](https://godoc.org/github.com/ybbus/jsonrpc/v3?status.svg)](https://godoc.org/github.com/ybbus/jsonrpc/v3)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)  
@@ -500,12 +502,12 @@ func main() {
 ### Change default RPCRequestID
 
 By default, the client will set the id of an RPCRequest to 0.
-This can be changed by setting the RPCClientOpts.DefaultRPCRequestID to a custom value:
+This can be changed by setting the RPCClientOpts.DefaultRequestID to a custom value:
 
 ```go
 func main() {
     rpcClient := jsonrpc.NewClientWithOpts("http://my-rpc-service:8080/rpc", &jsonrpc.RPCClientOpts{
-        DefaultRPCRequestID: 1,
+        DefaultRequestID: 1,
     })
 
     // requests now have default id 1
